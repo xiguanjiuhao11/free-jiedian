@@ -2,11 +2,11 @@ name: Auto Scrape Nodes
 
 on:
   schedule:
-    - cron: "0 * * * *"  # 每小时的 0 分触发一次（UTC 时间）
-  workflow_dispatch:     # 允许你在 GitHub 网页上点击按钮手动运行
+    - cron: "0 0 */2 * *"   # 每两天的 UTC 0 点运行
+  workflow_dispatch:
 
 permissions:
-  contents: write        # 赋予 GitHub Actions 推送代码的权限
+  contents: write
 
 jobs:
   build-and-update:
